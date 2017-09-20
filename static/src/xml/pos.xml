@@ -1,0 +1,34 @@
+ <div class="summary">
+                <div t-attf-class="line #{orderlines.length === 0 ? 'empty' : ''}">
+                   
+                    <div class='entry subtotal'>
+                        <span class="label">Subtotal</span> <span class="value">0.00 €</span>
+                    </div>
+                    <div class='entry taxes' style='display:none;'>
+                        <span class="label">PPN</span> <span class="value">0.00 €</span>
+                    </div>
+                    <div class='entry discount'>
+                        <span class="label">Diskon</span> <span class="value">0.00 €</span>
+                    </div>
+                    <div class='entry total'>
+                        <span class="label">Total</span> <span class="value">0.00 €</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+    </t>
+    <t t-name="IsanaLoyaltyPoints">
+        <div class='loyalty-points'>
+            <!-- classes change -->
+           <div t-attf-class="entry #{order.get_client() ? 'points' : 'points_hide'}">    <span class="label">Point Didapat</span> <span class="value"><t t-esc='points_won' /></span>
+            </div>
+            <div t-attf-class="entry #{order.get_client() ? 'points_spent' : 'points_hide'}">                        
+                <span class="label">Digunakan</span> <span class="value"><t t-esc='points_spent' /> </span>                        
+            </div>
+            <div t-attf-class="entry #{order.get_client() ? 'points_total' : 'points_hide'}">
+                <span class="label">Total Point</span> <span class="value"><t t-esc='points_total' /> </span>
+            </div>
+        </div>
+    </t>
+    <t t-n

@@ -1,0 +1,84 @@
+.how .to .use .css .with.if
+//for child use space and for one line not use space
+.pos .order-container .summary .line.loyalty{ 
+    margin-top: 0px !important;
+  
+}
+.pos .order-container .summary .line.empty.loyalty{
+    margin-top: 0px !important;  
+}
+
+.pos .order-container .summary .line .entry.points .value,
+.pos .order-container .summary .line .entry.points_spent .value,
+.pos .order-container .summary .line .entry.points_total .value,
+.pos .order-container .summary .line .entry.subtotal .value,
+.pos .order-container .summary .line .entry.discount .value,
+.pos .order-container .summary .line .entry.taxes .value,
+.pos .order-container .summary .line .entry.total .value {
+    float: right;
+    color: black;
+    width: 398px;
+    border-bottom: 1px solid #EAD5D5;
+    text-align: right;
+    font-size: 13px;
+    padding: 1px 0;
+}
+.pos .order-container .summary .line .entry.total .value {
+    font-weight: bold;
+    font-size: 24px;
+    color: #7f82ac;
+}
+.pos .order-container .summary .line .entry.points .label,
+.pos .order-container .summary .line .entry.points_spent .label,
+.pos .order-container .summary .line .entry.points_total .label,
+.pos .order-container .summary .line .entry.subtotal .label,
+.pos .order-container .summary .line .entry.taxes .label,
+.pos .order-container .summary .line .entry.discount .label,
+.pos .order-container .summary .line .entry.total .label {
+    text-align: left;
+    display: inline-block;
+    width: 100px;
+    font-size: 14px;
+    padding: 1px 0;
+}
+
+.pos .order-container .summary .line .entry.points_hide {
+    display: none !important;
+ }
+.pos .modal-dialog-voucher .popup.sale-product-undercostprice {
+    height: 360px;
+}
+
+.pos .order-container .summary .loyalty-points .entry.points .value,
+.pos .order-container .summary .loyalty-points .entry.points_spent .value,
+.pos .order-container .summary .loyalty-points .entry.points_total .value{
+    float: right;
+    color: black;
+    width: 398px;
+    border-bottom: 1px solid #EAD5D5;
+    text-align: right;
+    font-size: 13px;
+    padding: 1px 0;
+}
+.pos .order-container .summary .loyalty-points .entry.points .label,
+.pos .order-container .summary .loyalty-points .entry.points_spent .label,
+.pos .order-container .summary .loyalty-points .entry.points_total .label{
+    text-align: left;
+    display: inline-block;
+    width: 100px;
+    font-size: 14px;
+    padding: 1px 0;
+}
+.pos .order-container .summary .loyalty-points {
+    border: solid 1px #BEBEBE;
+    border-radius: 5px; 
+    background: #FEFEFE; 
+    max-width: none; 
+    padding: 10px;
+    // margin: 10px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    margin-right: 10px;
+    margin-left: 10px;
+    max-height: 50px;
+}
