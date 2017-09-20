@@ -46,3 +46,22 @@ module.OrderWidget = module.OrderWidget.extend({
             
         },
     });
+var SelectionPopupWidget = PopupWidget.extend({
+    template: 'SelectionPopupWidget',
+    show: function(options){
+        options = options || {};
+        var self = this;
+        this._super(options);
+
+        this.list    = options.list    || [];
+        this.renderElement();
+    },
+    click_item : function(event) {
+        this.gui.close_popup();
+        if (this.options.confirm) {
+            var item = this.list[parseInt($(event.target).data('item-index'))];
+            item = item ? item.item : item;
+            this.options.confirm.call(self,item);
+        }
+    }
+});
