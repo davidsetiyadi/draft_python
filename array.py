@@ -1,0 +1,1 @@
+#untuk membuat array di database odoo store menggunakan field text f
