@@ -1,34 +1,47 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <openerp>
-<data>
-<template id="sgeede_liquidity_report.sgeede_liquidity_reports">
-    <t t-call="report.html_container">
-        <t t-call="report.external_layout">
-            <div class="page">
-                <h2>Liquidity Report</h2>
+    <data>       
+    <record id="view_sgeede_liquidity_report" model="ir.ui.view">
+            <field name="name">view.sgeede.liquidity.report</field>
+            <field name="model">sgeede.liquidity.report</field>
+            <field name="arch" type="xml">
+                <form string="Print">
+                     <group col="4" string="Dates">
+                        <field name="date_from" required="1"/>
+                        <field name="date_to" required="1"/><newline/>
 
-                <div class="row mt32">
-                    <div class="col-xs-3">
-                        <strong>Company</strong>:<br/>
-                        <span t-esc="res_company.name"/>
-                    </div>         
-                    <div class="col-xs-3">
-                        <strong>Print Date</strong>:<br/>
-                        <span t-esc="formatLang(time.strftime('%Y-%m-%d'),date=True)"/>
-                    </div>
-                    <div class="col-xs-3">
-                        <strong>Start Period</strong>:<br/>
-                        <span t-esc="formatLang(data['form']['date_from'],date=True)"/> 
-                    </div>
-                    <div class="col-xs-3">
-                        <strong>End Period</strong>:<br/>
-                        <span t-esc="formatLang(data['form']['date_to'],date=True)"/> 
-                    </div> 
-                </div>                
-                <t t-raw="get_view(data['form'])"/>              
-            </div>
-        </t>
-    </t>
-</template>
-</data>
+                    </group> 
+                           
+                    <footer>
+                         <button name="print_report" type="object" string="Print Report" class="oe_highlight"/> 
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+    <record id="action_sgeede_liquidity_report" model="ir.actions.act_window">
+        <field name="name">Liquidity Report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sgeede.liquidity.report</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+    <menuitem id="menu_action_sgeede_liquidity_report" action="action_sgeede_liquidity_report" parent="account.menu_finance_reports" sequence="0"/>
+    <record id="liquidity_report_mobile_tree_view" model="ir.ui.view">
+        <field name="name">sgeede.liquidity.report.mobile.tree</field>
+        <field name="model">sgeede.liquidity.report.mobile</field>
+        <field name="arch" type="xml">
+            <tree colors="red:cash_in &lt; cash_out" string="Liquidity" create="false" >
+                 <field name="name"/>
+                <field name="cash_in"/>                   
+                <field name="cash_out"/>
+                <field name="balance"/>
+            </tree>
+        </field>
+    </record>
+
+    </data>
 </openerp>
