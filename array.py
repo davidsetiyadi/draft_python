@@ -1,3 +1,38 @@
+6/Oct/17
+* untuk yang minus, format ny di ganti ke kurung "("
+* Bugs edukits 
+1. Customer > Print statement > Line 720 harus nya di hapus (queri )
+2. Statement >One partner per page>>Currency ID
+
+5/Oct/17
+*Tambahkan harga jual 1 2 dst ketika input barang di so
+ketika pilih barang muncul pop out
+minimum price
+price unit (one2many)
+* default fiscal year dikosongkan aj
+*Filter invoice berdasarkan tanggal, sesuai foto
+
+4/Oct/17
+*Kolom anda hemat : buat dalam bentuk kapital dan bold (Begitu juga utk kolom UOM pada penerimaan barang)
+* Pantau Stock tepung QFC
+*Tambahkan fitur Change UOM di penerimaan
+* ada BUGS default , Pas terima barang kurang ,
+Beli pakai UOM Dozen , lalu terima barang tidak full , maka sistem langsung error
+Bisa nya transfer sejumlah 1/4 Dozen, atau 3 item
+1/2 dozen atau 6 Item
+
+3/Oct/17
+* Kirim Format Voucher ISANA
+* Follow up isana , Format PO belum dapat , karena kita di deadline kami sudah dekat 
+* QFC masalah stock quant 
+* ISana ,ketika klik tombol ada tree view product selain yang di scan tadi 
+ada jumlah qty dll
+*Tombol di inventory loss, utk melihat item yg ada stock namun tidak ada pada inventory loss tersebut
+# Klik Tombol muncul tree view product selain yang ada di inventory loss
+* Tambahkan fitur Change UOM di penerimaan
+ <page string="Operations" attrs="{'invisible': ['|', ('state','!=','done'), ('pack_operation_ids','=',[])]}">
+
+
 #untuk membuat array di database odoo store menggunakan field text f
 [-0.09634063,  0.12095481, -0.00436332, -0.07643753,  0.0080383,
                             0.01902981, -0.07184699, -0.09383309,  0.18518871, -0.09588896,
