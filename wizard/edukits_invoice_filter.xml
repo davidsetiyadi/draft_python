@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>       
+    <record id="view_edukits_invoice_filter" model="ir.ui.view">
+            <field name="name">view.edukits.invoice.filter</field>
+            <field name="model">edukits.invoice.filter</field>
+            <field name="arch" type="xml">
+                <form string="Print">
+                    <group col="4">
+                        <field name="model_id" required ="1" domain="[('osv_memory','=',False)]" string="Menu"/><newline/>
+                        <field name="date_from" required="1"/>
+                        <field name="date_to" required="1"/><newline/>
+                        <field name="field_id" required="1" string="Search by" context="{'model_id': model_id}" select="1"/>
+                    </group> 
+                           
+                    <footer>
+                         <button name="filter_invoice" type="object" string="Filter" class="oe_highlight"/> 
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+    <record id="action_edukits_invoice_filter" model="ir.actions.act_window">
+        <field name="name">Filter Date</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">edukits.invoice.filter</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+    <menuitem id="menu_eduktis_filter" name="Filter Menu" parent="account.menu_finance" sequence="14"/>
+    <menuitem id="menu_action_edukits_invoice_filter" action="action_edukits_invoice_filter" parent="edukits_custom.menu_eduktis_filter" sequence="0"/>
+    <!-- <menuitem id="menu_action_edukits_invoice_filter" action="action_edukits_invoice_filter" parent="account.menu_finance_reports" sequence="0"/> -->
+ 
+
+    </data>
+</openerp>
